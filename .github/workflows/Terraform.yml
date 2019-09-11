@@ -10,7 +10,7 @@ jobs:
 
     - name: Login to Azure
       run: |
-        az login --service-principal -u ${{ secrets.AZ_DEV_CLIENT_ID}} -p ${{ secrets.AZ_DEV_CLIENT_SECRET}} --tenant TENANT_ID
+        az login --service-principal -u ${{ secrets.AZ_DEV_CLIENT_ID}} -p ${{ secrets.AZ_DEV_CLIENT_SECRET}} --tenant 3057f563-061e-4eac-b932-79105b67fe9f
 
     - name: Terraform - Init
       uses: hashicorp/terraform-github-actions/init@v0.3.7
