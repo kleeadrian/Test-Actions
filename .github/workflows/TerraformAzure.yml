@@ -1,11 +1,14 @@
 name: Terraform
-on: [pull_request]
+on: master
 
 jobs:
-  on-pull-request:
-    name: On Pull Request
+  master:
+    name: master
     runs-on: ubuntu-latest
     steps:
+        - name: Checkout Repo
+      uses: actions/checkout@v1
+      
     - name: Filter to PR Opened
       uses: actions/bin/filter@master
       with:
