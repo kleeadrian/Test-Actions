@@ -2,8 +2,8 @@ name: Terraform
 on: master
 
 jobs:
-  master:
-    name: master
+  on-pull-request:
+    name: on-pull-request
     runs-on: ubuntu-latest
     steps:
         - name: Checkout Repo
