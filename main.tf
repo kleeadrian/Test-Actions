@@ -1,6 +1,6 @@
 
 provider "azurerm" {
-  version = "=1.33"
+  version = "=1.28.0"
   
   client_id       = "350760b5-f41d-451f-9d6f-6fe55a472e00"
   client_secret   = "bf853ccc-0644-41af-aa73-bf16bec52055"
