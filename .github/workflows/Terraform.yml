@@ -7,28 +7,7 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v1.0.0
-
-    - name: Login to Azure
-      run: |
-        echo $ARM_CLIENT_ID
-        echo $ARM_CLIENT_SECRET
-      env:
-         ARM_CLIENT_ID: ${{ secrets.AZ_DEV_CLIENT_ID}}
-         ARM_CLIENT_SECRET: ${{ secrets.AZ_DEV_CLIENT_SECRET}} 
-         ARM_TENANT_ID: 3057f563-061e-4eac-b932-79105b67fe9f
-         ARM_SUBSCRIPTION_ID: c37cdda5-2d23-447a-bd44-2d1fdaa39e24
-
-    - name: Adding breakpoint
-      run: |
-        echo $ARM_SUBSCRIPTION_ID
-        echo $ARM_TENANT_ID
-      env:
-         ARM_CLIENT_ID: ${{ secrets.AZ_DEV_CLIENT_ID}}
-         ARM_CLIENT_SECRET: ${{ secrets.AZ_DEV_CLIENT_SECRET}} 
-         ARM_TENANT_ID: 3057f563-061e-4eac-b932-79105b67fe9f
-         ARM_SUBSCRIPTION_ID: c37cdda5-2d23-447a-bd44-2d1fdaa39e24
-        
-        
+       
     - name: Terraform - Init
       uses: hashicorp/terraform-github-actions/init@v0.3.5
       env:
@@ -42,4 +21,17 @@ jobs:
  
     - name: Terraform - Plan
       uses: hashicorp/terraform-github-actions/plan@v0.3.5
+      env:   
+         ARM_CLIENT_ID: ${{ secrets.AZ_DEV_CLIENT_ID}}
+         ARM_CLIENT_SECRET: ${{ secrets.AZ_DEV_CLIENT_SECRET}} 
+         ARM_TENANT_ID: 3057f563-061e-4eac-b932-79105b67fe9f
+         ARM_SUBSCRIPTION_ID: c37cdda5-2d23-447a-bd44-2d1fdaa39e24
+        
+    - name: Terraform - Apply
+      uses: hashicorp/terraform-github-actions/apply@v0.3.5
+      env:   
+         ARM_CLIENT_ID: ${{ secrets.AZ_DEV_CLIENT_ID}}
+         ARM_CLIENT_SECRET: ${{ secrets.AZ_DEV_CLIENT_SECRET}} 
+         ARM_TENANT_ID: 3057f563-061e-4eac-b932-79105b67fe9f
+         ARM_SUBSCRIPTION_ID: c37cdda5-2d23-447a-bd44-2d1fdaa39e24
    
