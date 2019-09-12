@@ -10,14 +10,17 @@ jobs:
 
     - name: Login to Azure
       run: |
-        az login -u ${{ secrets.AZ_DEV_UNAME}} -p lololol1231
+        export ARM_CLIENT_ID=${{ secrets.AZ_DEV_CLIENT_ID}}
+        export ARM_CLIENT_SECRET=${{ secrets.AZ_DEV_CLIENT_SECRET}} 
+        export ARM_TENANT_ID=3057f563-061e-4eac-b932-79105b67fe9f
+        export ARM_SUBSCRIPTION_ID=c37cdda5-2d23-447a-bd44-2d1fdaa39e24
 
     - name: Terraform - Init
-      uses: hashicorp/terraform-github-actions/init@v0.3.6
+      uses: hashicorp/terraform-github-actions/init@v0.3.5
 
     - name: Terraform - Validate
-      uses: hashicorp/terraform-github-actions/validate@v0.3.6
+      uses: hashicorp/terraform-github-actions/validate@v0.3.5
  
     - name: Terraform - Plan
-      uses: hashicorp/terraform-github-actions/plan@v0.3.6
+      uses: hashicorp/terraform-github-actions/plan@v0.3.5
    
