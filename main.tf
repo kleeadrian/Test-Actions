@@ -2,10 +2,10 @@
 provider "azurerm" {
   version = "=1.28.0"
   
-  client_id       = "350760b5-f41d-451f-9d6f-6fe55a472e00"
-  client_secret   = "bf853ccc-0644-41af-aa73-bf16bec52055"
-  subscription_id      = "c37cdda5-2d23-447a-bd44-2d1fdaa39e24"
-  tenant_id            = "3057f563-061e-4eac-b932-79105b67fe9f"
+#  client_id       = "350760b5-f41d-451f-9d6f-6fe55a472e00"
+#  client_secret   = "bf853ccc-0644-41af-aa73-bf16bec52055"
+#  subscription_id      = "c37cdda5-2d23-447a-bd44-2d1fdaa39e24"
+#  tenant_id            = "3057f563-061e-4eac-b932-79105b67fe9f"
 }
 
 terraform {
