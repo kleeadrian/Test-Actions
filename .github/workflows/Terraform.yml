@@ -20,7 +20,7 @@ jobs:
       uses: hashicorp/terraform-github-actions/validate@v0.3.6
  
     - name: Terraform - Plan
-      uses: kleeadrian/terraform-github-actions/plan@v0.3.6.1
+      uses: kleeadrian/terraform-github-actions/plan@v0.3.6.2
       env:   
          ARM_CLIENT_ID: ${{ secrets.AZ_DEV_CLIENT_ID}}
          ARM_CLIENT_SECRET: ${{ secrets.AZ_DEV_CLIENT_SECRET}} 
@@ -28,7 +28,7 @@ jobs:
          ARM_SUBSCRIPTION_ID: c37cdda5-2d23-447a-bd44-2d1fdaa39e24
         
     - name: Terraform - Apply
-      uses: hashicorp/terraform-github-actions/apply@v0.3.6
+      uses: kleeadrian/terraform-github-actions/apply@v0.3.6.2
       env:   
          ARM_CLIENT_ID: ${{ secrets.AZ_DEV_CLIENT_ID}}
          ARM_CLIENT_SECRET: ${{ secrets.AZ_DEV_CLIENT_SECRET}} 
