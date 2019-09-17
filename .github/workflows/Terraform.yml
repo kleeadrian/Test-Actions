@@ -20,7 +20,7 @@ jobs:
       uses: hashicorp/terraform-github-actions/validate@v0.3.6
  
     - name: Terraform - Plan
-      uses: hashicorp/terraform-github-actions/plan@v0.3.6
+      uses: kleeadrian/terraform-github-actions/plan@v0.3.6
       env:   
          ARM_CLIENT_ID: ${{ secrets.AZ_DEV_CLIENT_ID}}
          ARM_CLIENT_SECRET: ${{ secrets.AZ_DEV_CLIENT_SECRET}} 
