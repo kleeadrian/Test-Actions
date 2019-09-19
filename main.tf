@@ -12,16 +12,15 @@ terraform {
   }
 }
 
-
-resource "azurerm_resource_group" "test" {
+resource "azurerm_resource_group" "rsg_test" {
   name     = "api-rg-pro"
   location = "Australia East"
 }
 
-resource "azurerm_app_service_plan" "test" {
+resource "azurerm_app_service_plan" "app_service_plan" {
   name                = "api-appserviceplan-pro"
-  location            = "${azurerm_resource_group.test.location}"
-  resource_group_name = "${azurerm_resource_group.test.name}"
+  location            = "${azurerm_resource_group.rsg_test.location}"
+  resource_group_name = "${azurerm_resource_group.rsg_test.name}"
 
   sku {
     tier = "Standard"
@@ -31,7 +30,7 @@ resource "azurerm_app_service_plan" "test" {
 
 resource "azurerm_app_service" "main" {
   name                = "appservice-test"
-  location            = "${azurerm_resource_group.rsg_app_plan.location}"
-  resource_group_name = "${azurerm_resource_group.rsg_app_plan.name}"
-  app_service_plan_id = "${azurerm_app_service_plan.app_plan_test.id}"
+  location            = "${azurerm_resource_group.rsg_test.location}"
+  resource_group_name = "${azurerm_resource_group.rsg_test.name}"
+  app_service_plan_id = "${azurerm_app_service_plan.app_service_plan.id}"
 }
