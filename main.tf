@@ -1,6 +1,6 @@
 
 provider "azurerm" {
-  version = "=1.33.0"
+  vn = "=1.33.0"
 }
 
 terraform {
