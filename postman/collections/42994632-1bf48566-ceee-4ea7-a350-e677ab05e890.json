@@ -1,0 +1,223 @@
+{
+	"info": {
+		"_postman_id": "42994632-1bf48566-ceee-4ea7-a350-e677ab05e890",
+		"name": "BookAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "books",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "Get book by ID",
+							"id": "42994632-5b917d92-8a90-42e9-91ae-bb3ec5d0d17a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/books/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books",
+										":id"
+									],
+									"variable": [
+										{
+											"id": "c27d256e-ceca-4273-a004-0163593bd91d",
+											"key": "id",
+											"value": "string",
+											"description": "(Required) the id of a book"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete book by ID",
+							"id": "42994632-35f66708-4d54-4699-8f0f-e6f6c29a6a81",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/books/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books",
+										":id"
+									],
+									"variable": [
+										{
+											"id": "d0142886-4f6a-496b-b060-8b961c74b17b",
+											"key": "id",
+											"value": "string",
+											"description": "(Required) the id of a book"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "42994632-dad7917c-2dbb-4c40-b591-1f9cd7069f34"
+				},
+				{
+					"name": "Get All Books",
+					"id": "42994632-a9c58f81-8284-4292-82d0-b5b68bf1a2e1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/books",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"books"
+							]
+						},
+						"description": "Retrieves a list of books from the Library API.\n\nEach item in the returned array represents a book with the following fields:\n- id (string): Unique identifier of the book\n- title (string): Book title\n- author (string): Author name\n- genre (string): Literary genre\n- yearPublished (number): Year the book was published\n- checkedOut (boolean): Whether the book is currently checked out\n- isPermanentCollection (boolean): Whether the book is part of the permanent collection\n- createdAt (string): ISO timestamp when the record was created"
+					},
+					"response": [
+						{
+							"id": "42994632-5f8243d0-7355-4ded-916d-ddbea0372013",
+							"name": "Get Checked out books",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/books",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"responseTime": null,
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Add New Book",
+					"id": "42994632-ed171e2b-8e01-49c2-a655-4649eb80bdee",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"string\",\n  \"author\": \"string\",\n  \"genre\": \"string\",\n  \"yearPublished\": 7931\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/books?deprecated=false",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"books"
+							],
+							"query": [
+								{
+									"key": "deprecated",
+									"value": "false"
+								}
+							]
+						},
+						"description": "Adds a new book to the library database.\n\nRequired fields in the request body:\n- title (string): The title of the book.\n- author (string): The author of the book.\n- genre (string): The genre or category of the book.\n- yearPublished (integer): The year the book was published.\n\nSend a JSON object with these fields in the request body to create a new book record."
+					},
+					"response": [
+						{
+							"id": "42994632-0ca6fd63-64e3-4a3f-af67-f263c2524296",
+							"name": "Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"title\": \"string\",\n  \"author\": \"string\",\n  \"genre\": \"string\",\n  \"yearPublished\": 7931\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/books?deprecated=false",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books"
+									],
+									"query": [
+										{
+											"key": "deprecated",
+											"value": "false"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"responseTime": null,
+							"body": null
+						}
+					]
+				}
+			],
+			"id": "42994632-ddf879fd-3d54-449a-9b90-5b68420e2230"
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "{{baseUrl123}}"
+		}
+	]
+}
