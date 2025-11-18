@@ -21,21 +21,13 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/books/:id",
+									"raw": "{{baseUrl}}/books/123213",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"books",
-										":id"
-									],
-									"variable": [
-										{
-											"id": "c27d256e-ceca-4273-a004-0163593bd91d",
-											"key": "id",
-											"value": "string",
-											"description": "(Required) the id of a book"
-										}
+										"123213"
 									]
 								}
 							},
